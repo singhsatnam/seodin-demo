@@ -1,0 +1,184 @@
+entity Study {
+	title String required
+    description String
+    author String
+    license String
+}
+
+entity SoftwareSystem {
+	tag String
+    author String
+    license String
+}
+
+entity Task {
+	tag String
+    author String
+    license String
+}
+
+entity Developer {
+	name String required
+    license String
+}
+
+entity Interview {
+	tag String
+    description String
+    author String
+    license String
+}
+
+entity ThinkAloud {
+	tag String
+    description String
+    author String
+    license String
+}
+
+entity Diary {
+	uri String
+    status ArtifactStatus
+    author String
+    license String
+}
+
+
+entity Audio {
+	tag String
+    description String
+    duration Integer
+    uri String
+    status ArtifactStatus
+    recorded LocalDate
+    author String
+    license String
+}
+
+entity Video {
+	tag String
+    description String
+    duration Integer
+    uri String
+    status ArtifactStatus
+    recorded LocalDate
+    author String
+    license String
+}
+
+entity Note {
+	tag String
+    description String
+    uri String
+    status ArtifactStatus
+    author String
+    license String
+}
+
+entity Defect {
+	ticket String
+    summary String
+    description TextBlob
+    status DefectStatus
+    resolution Resolution
+    severity Severity
+    priority Priority
+    recorded LocalDate
+    modified LocalDate
+    status ArtifactStatus
+    author String
+    license String
+}
+
+entity TestCase {
+	tag String
+	uri String
+    status ArtifactStatus
+    author String
+    license String
+}
+
+entity InteractiveLog {
+	kind LogKind
+    sourceHandle String
+    origin String
+    delta String
+    recorded LocalDate
+    status ArtifactStatus
+    author String
+    license String
+}
+
+entity SourceCode {
+	tag String
+	uri String
+    status ArtifactStatus
+    author String
+    license String
+}
+
+entity DesignPattern {
+	tag String
+    author String
+    xmlDescriptor String
+    status ArtifactStatus
+    author String
+    license String
+}
+
+entity Script {
+	tag String
+    description String
+    sourceCode String
+    status ArtifactStatus
+    author String
+    license String
+}
+
+relationship OneToMany {
+	Study to Developer{study(title)},
+    Study to SoftwareSystem{study(title)},
+    Study to Script{study(title)},
+    Study to Task{study(title)},
+    SoftwareSystem to SourceCode{softwareSystem(tag)},
+    SoftwareSystem to Diary{softwareSystem(tag)},
+    Task to Diary{task(tag)},
+    SoftwareSystem to TestCase{softwareSystem(tag)},
+    SoftwareSystem to ThinkAloud{softwareSystem(tag)},
+    SourceCode to DesignPattern{SourceCode(tag)},
+    Developer to Interview{developer(name)},
+    Developer to Diary{developer(name)},
+    Developer to ThinkAloud{developer(name)},
+    Developer to Defect{developer(name)},
+    Developer to TestCase{developer(name)},
+    Developer to InteractiveLog{developer(name)},
+    Interview to Audio{interview(tag)},
+    Interview to Video{interview(tag)},
+    Interview to Note{interview(tag)},
+    ThinkAloud to Note{thinkaloud(tag)},
+    ThinkAloud to Video{thinkaloud(tag)}
+}
+
+enum LogKind {
+    SELECTION, COMMAND, PREFERENCE, EDIT
+}
+
+enum DefectStatus {
+    CLOSED, NEW, REOPENED
+}
+
+enum Priority {
+    MINOR, MAJOR, CRITICAL, TRIVIAL, BLOCKER
+}
+
+enum Severity {
+    NONE
+}
+
+enum Resolution {
+    NONE, FIXED, WONTFIX, DUPLICATE, INVALID
+}
+
+enum ArtifactStatus {
+    PRIVATE, SUBMITED, PUBLISHED
+}
