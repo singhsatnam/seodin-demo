@@ -1,0 +1,29 @@
+
+{
+    "seodinApp": {
+        "sourceCode" : {
+            "home": {
+                "title": "SourceCodes",
+                "createLabel": "Créer un nouveau Source Code",
+                "createOrEditLabel": "Créer ou éditer un Source Code",
+                "search": "Recherche pour Source Code"
+            },
+            "created": "Un nouveau Source Code a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Source Code avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Source Code avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Source Code {{ id }} ?"
+            },
+            "detail": {
+                "title": "Source Code"
+            },
+            "tag": "Tag",
+            "uri": "Uri",
+            "status": "Status",
+            "author": "Author",
+            "license": "License",
+            "designPattern": "Design Pattern",
+            "softwareSystem": "Software System"
+        }
+    }
+}

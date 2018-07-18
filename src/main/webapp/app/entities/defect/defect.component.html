@@ -1,0 +1,97 @@
+<div>
+    <h2>
+        <span jhiTranslate="seodinApp.defect.home.title">Defects</span>
+        <button class="btn btn-primary float-right jh-create-entity create-defect" [routerLink]="['/', { outlets: { popup: ['defect-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="seodinApp.defect.home.createLabel">
+            Create new Defect
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'seodinApp.defect.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="defects">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="seodinApp.defect.ticket">Ticket</span></th>
+            <th><span jhiTranslate="seodinApp.defect.summary">Summary</span></th>
+            <th><span jhiTranslate="seodinApp.defect.description">Description</span></th>
+            <th><span jhiTranslate="seodinApp.defect.status">Status</span></th>
+            <th><span jhiTranslate="seodinApp.defect.resolution">Resolution</span></th>
+            <th><span jhiTranslate="seodinApp.defect.severity">Severity</span></th>
+            <th><span jhiTranslate="seodinApp.defect.priority">Priority</span></th>
+            <th><span jhiTranslate="seodinApp.defect.recorded">Recorded</span></th>
+            <th><span jhiTranslate="seodinApp.defect.modified">Modified</span></th>
+            <th><span jhiTranslate="seodinApp.defect.author">Author</span></th>
+            <th><span jhiTranslate="seodinApp.defect.license">License</span></th>
+            <th><span jhiTranslate="seodinApp.defect.developer">Developer</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let defect of defects ;trackBy: trackId">
+                <td><a [routerLink]="['../defect', defect.id ]">{{defect.id}}</a></td>
+                <td>{{defect.ticket}}</td>
+                <td>{{defect.summary}}</td>
+                <td>{{defect.description}}</td>
+                <td jhiTranslate="{{'seodinApp.ArtifactStatus.' + defect.status}}">{{defect.status}}</td>
+                <td jhiTranslate="{{'seodinApp.Resolution.' + defect.resolution}}">{{defect.resolution}}</td>
+                <td jhiTranslate="{{'seodinApp.Severity.' + defect.severity}}">{{defect.severity}}</td>
+                <td jhiTranslate="{{'seodinApp.Priority.' + defect.priority}}">{{defect.priority}}</td>
+                <td>{{defect.recorded | date:'mediumDate'}}</td>
+                <td>{{defect.modified | date:'mediumDate'}}</td>
+                <td>{{defect.author}}</td>
+                <td>{{defect.license}}</td>
+                <td>
+                    <div *ngIf="defect.developer">
+                        <a [routerLink]="['../developer', defect.developer?.id ]" >{{defect.developer?.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../defect', defect.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'defect/'+ defect.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'defect/'+ defect.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{
+    "seodinApp": {
+        "Priority" : {
+            "null": "",
+            "MINOR": "MINOR",
+            "MAJOR": "MAJOR",
+            "CRITICAL": "CRITICAL",
+            "TRIVIAL": "TRIVIAL",
+            "BLOCKER": "BLOCKER"
+        }
+    }
+}

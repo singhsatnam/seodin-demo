@@ -1,0 +1,65 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myScriptLabel" jhiTranslate="seodinApp.script.home.createOrEditLabel">Create or edit a Script</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!script.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="script.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.script.tag" for="field_tag">Tag</label>
+            <input type="text" class="form-control" name="tag" id="field_tag"
+                [(ngModel)]="script.tag" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.script.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                [(ngModel)]="script.description" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.script.sourceCode" for="field_sourceCode">Source Code</label>
+            <input type="text" class="form-control" name="sourceCode" id="field_sourceCode"
+                [(ngModel)]="script.sourceCode" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.script.status" for="field_status">Status</label>
+            <select class="form-control" name="status" [(ngModel)]="script.status" id="field_status" >
+                <option value="PRIVATE">{{'seodinApp.ArtifactStatus.PRIVATE' | translate}}</option>
+                <option value="SUBMITED">{{'seodinApp.ArtifactStatus.SUBMITED' | translate}}</option>
+                <option value="PUBLISHED">{{'seodinApp.ArtifactStatus.PUBLISHED' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.script.author" for="field_author">Author</label>
+            <input type="text" class="form-control" name="author" id="field_author"
+                [(ngModel)]="script.author" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.script.license" for="field_license">License</label>
+            <input type="text" class="form-control" name="license" id="field_license"
+                [(ngModel)]="script.license" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.script.study" for="field_study">Study</label>
+            <select class="form-control" id="field_study" name="study" [(ngModel)]="script.study" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="studyOption.id === script.study?.id ? script.study : studyOption" *ngFor="let studyOption of studies; trackBy: trackStudyById">{{studyOption.title}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,40 @@
+
+<div *ngIf="softwareSystem">
+    <h2><span jhiTranslate="seodinApp.softwareSystem.detail.title">Software System</span> {{softwareSystem.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="seodinApp.softwareSystem.tag">Tag</span></dt>
+        <dd>
+            <span>{{softwareSystem.tag}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.softwareSystem.author">Author</span></dt>
+        <dd>
+            <span>{{softwareSystem.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.softwareSystem.license">License</span></dt>
+        <dd>
+            <span>{{softwareSystem.license}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.softwareSystem.study">Study</span></dt>
+        <dd>
+            <div *ngIf="softwareSystem.study">
+                <a [routerLink]="['/study', softwareSystem.study?.id]">{{softwareSystem.study?.title}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'software-system/'+ softwareSystem.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

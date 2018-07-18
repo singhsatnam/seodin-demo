@@ -1,0 +1,91 @@
+<div>
+    <h2>
+        <span jhiTranslate="seodinApp.interactiveLog.home.title">Interactive Logs</span>
+        <button class="btn btn-primary float-right jh-create-entity create-interactive-log" [routerLink]="['/', { outlets: { popup: ['interactive-log-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="seodinApp.interactiveLog.home.createLabel">
+            Create new Interactive Log
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'seodinApp.interactiveLog.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="interactiveLogs">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="seodinApp.interactiveLog.kind">Kind</span></th>
+            <th><span jhiTranslate="seodinApp.interactiveLog.sourceHandle">Source Handle</span></th>
+            <th><span jhiTranslate="seodinApp.interactiveLog.origin">Origin</span></th>
+            <th><span jhiTranslate="seodinApp.interactiveLog.delta">Delta</span></th>
+            <th><span jhiTranslate="seodinApp.interactiveLog.recorded">Recorded</span></th>
+            <th><span jhiTranslate="seodinApp.interactiveLog.status">Status</span></th>
+            <th><span jhiTranslate="seodinApp.interactiveLog.author">Author</span></th>
+            <th><span jhiTranslate="seodinApp.interactiveLog.license">License</span></th>
+            <th><span jhiTranslate="seodinApp.interactiveLog.developer">Developer</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let interactiveLog of interactiveLogs ;trackBy: trackId">
+                <td><a [routerLink]="['../interactive-log', interactiveLog.id ]">{{interactiveLog.id}}</a></td>
+                <td jhiTranslate="{{'seodinApp.LogKind.' + interactiveLog.kind}}">{{interactiveLog.kind}}</td>
+                <td>{{interactiveLog.sourceHandle}}</td>
+                <td>{{interactiveLog.origin}}</td>
+                <td>{{interactiveLog.delta}}</td>
+                <td>{{interactiveLog.recorded | date:'mediumDate'}}</td>
+                <td jhiTranslate="{{'seodinApp.ArtifactStatus.' + interactiveLog.status}}">{{interactiveLog.status}}</td>
+                <td>{{interactiveLog.author}}</td>
+                <td>{{interactiveLog.license}}</td>
+                <td>
+                    <div *ngIf="interactiveLog.developer">
+                        <a [routerLink]="['../developer', interactiveLog.developer?.id ]" >{{interactiveLog.developer?.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../interactive-log', interactiveLog.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'interactive-log/'+ interactiveLog.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'interactive-log/'+ interactiveLog.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

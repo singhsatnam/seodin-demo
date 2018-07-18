@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "audio",
+            "otherEntityName": "audio",
+            "otherEntityRelationshipName": "interview"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "video",
+            "otherEntityName": "video",
+            "otherEntityRelationshipName": "interview"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "note",
+            "otherEntityName": "note",
+            "otherEntityRelationshipName": "interview"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "developer",
+            "otherEntityName": "developer",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "author",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "license",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180531163709",
+    "entityTableName": "interview",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

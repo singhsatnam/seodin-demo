@@ -1,0 +1,31 @@
+
+{
+    "seodinApp": {
+        "developer" : {
+            "home": {
+                "title": "Developers",
+                "createLabel": "创建新 Developer",
+                "createOrEditLabel": "创建或编辑 Developer",
+                "search": "查找 Developer"
+            },
+            "created": "Developer {{ param }} 创建成功",
+            "updated": "Developer {{ param }} 更新成功",
+            "deleted": "Developer {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Developer {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Developer"
+            },
+            "name": "Name",
+            "license": "License",
+            "interview": "Interview",
+            "diary": "Diary",
+            "thinkAloud": "Think Aloud",
+            "defect": "Defect",
+            "testCase": "Test Case",
+            "interactiveLog": "Interactive Log",
+            "study": "Study"
+        }
+    }
+}

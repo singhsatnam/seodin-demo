@@ -1,0 +1,29 @@
+
+{
+    "seodinApp": {
+        "sourceCode" : {
+            "home": {
+                "title": "Source Codes",
+                "createLabel": "创建新 Source Code",
+                "createOrEditLabel": "创建或编辑 Source Code",
+                "search": "查找 Source Code"
+            },
+            "created": "Source Code {{ param }} 创建成功",
+            "updated": "Source Code {{ param }} 更新成功",
+            "deleted": "Source Code {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Source Code {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Source Code"
+            },
+            "tag": "Tag",
+            "uri": "Uri",
+            "status": "Status",
+            "author": "Author",
+            "license": "License",
+            "designPattern": "Design Pattern",
+            "softwareSystem": "Software System"
+        }
+    }
+}

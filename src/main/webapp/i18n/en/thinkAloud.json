@@ -1,0 +1,30 @@
+
+{
+    "seodinApp": {
+        "thinkAloud" : {
+            "home": {
+                "title": "Think Alouds",
+                "createLabel": "Create a new Think Aloud",
+                "createOrEditLabel": "Create or edit a Think Aloud",
+                "search": "Search for Think Aloud"
+            },
+            "created": "A new Think Aloud is created with identifier {{ param }}",
+            "updated": "A Think Aloud is updated with identifier {{ param }}",
+            "deleted": "A Think Aloud is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Think Aloud {{ id }}?"
+            },
+            "detail": {
+                "title": "Think Aloud"
+            },
+            "tag": "Tag",
+            "description": "Description",
+            "author": "Author",
+            "license": "License",
+            "note": "Note",
+            "video": "Video",
+            "softwareSystem": "Software System",
+            "developer": "Developer"
+        }
+    }
+}

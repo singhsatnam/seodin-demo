@@ -1,0 +1,30 @@
+
+{
+    "seodinApp": {
+        "softwareSystem" : {
+            "home": {
+                "title": "Software Systems",
+                "createLabel": "Criar novo Software System",
+                "createOrEditLabel": "Criar ou editar Software System",
+                "search": "Pesquisar por Software System"
+            },
+            "created": "Um novo Software System foi criado com o identificador {{ param }}",
+            "updated": "Um Software System foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Software System foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Software System {{ id }}?"
+            },
+            "detail": {
+                "title": "Software System"
+            },
+            "tag": "Tag",
+            "author": "Author",
+            "license": "License",
+            "sourceCode": "Source Code",
+            "diary": "Diary",
+            "testCase": "Test Case",
+            "thinkAloud": "Think Aloud",
+            "study": "Study"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+
+{
+    "seodinApp": {
+        "study" : {
+            "home": {
+                "title": "Studies",
+                "createLabel": "Crear nuevo Study",
+                "createOrEditLabel": "Crear o editar Study",
+                "search": "Search for Study"
+            },
+            "created": "Un nuevo Study ha sido creado con el identificador {{ param }}",
+            "updated": "Un Study ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Study ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Study {{ id }}?"
+            },
+            "detail": {
+                "title": "Study"
+            },
+            "title": "Title",
+            "description": "Description",
+            "author": "Author",
+            "license": "License",
+            "developer": "Developer",
+            "softwareSystem": "Software System",
+            "script": "Script",
+            "task": "Task"
+        }
+    }
+}

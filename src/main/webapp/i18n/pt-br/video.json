@@ -1,0 +1,32 @@
+
+{
+    "seodinApp": {
+        "video" : {
+            "home": {
+                "title": "Videos",
+                "createLabel": "Criar novo Video",
+                "createOrEditLabel": "Criar ou editar Video",
+                "search": "Pesquisar por Video"
+            },
+            "created": "Um novo Video foi criado com o identificador {{ param }}",
+            "updated": "Um Video foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Video foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Video {{ id }}?"
+            },
+            "detail": {
+                "title": "Video"
+            },
+            "tag": "Tag",
+            "description": "Description",
+            "duration": "Duration",
+            "uri": "Uri",
+            "status": "Status",
+            "recorded": "Recorded",
+            "author": "Author",
+            "license": "License",
+            "interview": "Interview",
+            "thinkaloud": "Thinkaloud"
+        }
+    }
+}

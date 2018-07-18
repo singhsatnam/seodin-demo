@@ -1,0 +1,30 @@
+
+{
+    "seodinApp": {
+        "thinkAloud" : {
+            "home": {
+                "title": "Think Alouds",
+                "createLabel": "创建新 Think Aloud",
+                "createOrEditLabel": "创建或编辑 Think Aloud",
+                "search": "查找 Think Aloud"
+            },
+            "created": "Think Aloud {{ param }} 创建成功",
+            "updated": "Think Aloud {{ param }} 更新成功",
+            "deleted": "Think Aloud {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Think Aloud {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Think Aloud"
+            },
+            "tag": "Tag",
+            "description": "Description",
+            "author": "Author",
+            "license": "License",
+            "note": "Note",
+            "video": "Video",
+            "softwareSystem": "Software System",
+            "developer": "Developer"
+        }
+    }
+}

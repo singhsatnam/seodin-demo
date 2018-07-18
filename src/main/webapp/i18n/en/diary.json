@@ -1,0 +1,29 @@
+
+{
+    "seodinApp": {
+        "diary" : {
+            "home": {
+                "title": "Diaries",
+                "createLabel": "Create a new Diary",
+                "createOrEditLabel": "Create or edit a Diary",
+                "search": "Search for Diary"
+            },
+            "created": "A new Diary is created with identifier {{ param }}",
+            "updated": "A Diary is updated with identifier {{ param }}",
+            "deleted": "A Diary is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Diary {{ id }}?"
+            },
+            "detail": {
+                "title": "Diary"
+            },
+            "uri": "Uri",
+            "status": "Status",
+            "author": "Author",
+            "license": "License",
+            "softwareSystem": "Software System",
+            "task": "Task",
+            "developer": "Developer"
+        }
+    }
+}

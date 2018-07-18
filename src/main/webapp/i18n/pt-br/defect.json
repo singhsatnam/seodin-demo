@@ -1,0 +1,34 @@
+
+{
+    "seodinApp": {
+        "defect" : {
+            "home": {
+                "title": "Defects",
+                "createLabel": "Criar novo Defect",
+                "createOrEditLabel": "Criar ou editar Defect",
+                "search": "Pesquisar por Defect"
+            },
+            "created": "Um novo Defect foi criado com o identificador {{ param }}",
+            "updated": "Um Defect foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Defect foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Defect {{ id }}?"
+            },
+            "detail": {
+                "title": "Defect"
+            },
+            "ticket": "Ticket",
+            "summary": "Summary",
+            "description": "Description",
+            "status": "Status",
+            "resolution": "Resolution",
+            "severity": "Severity",
+            "priority": "Priority",
+            "recorded": "Recorded",
+            "modified": "Modified",
+            "author": "Author",
+            "license": "License",
+            "developer": "Developer"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+
+{
+    "seodinApp": {
+        "audio" : {
+            "home": {
+                "title": "Audio",
+                "createLabel": "Crear nuevo Audio",
+                "createOrEditLabel": "Crear o editar Audio",
+                "search": "Search for Audio"
+            },
+            "created": "Un nuevo Audio ha sido creado con el identificador {{ param }}",
+            "updated": "Un Audio ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Audio ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Audio {{ id }}?"
+            },
+            "detail": {
+                "title": "Audio"
+            },
+            "tag": "Tag",
+            "description": "Description",
+            "duration": "Duration",
+            "uri": "Uri",
+            "status": "Status",
+            "recorded": "Recorded",
+            "author": "Author",
+            "license": "License",
+            "interview": "Interview"
+        }
+    }
+}

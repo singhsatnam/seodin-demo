@@ -1,0 +1,66 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "interview",
+            "otherEntityName": "interview",
+            "otherEntityRelationshipName": "developer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "diary",
+            "otherEntityName": "diary",
+            "otherEntityRelationshipName": "developer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "thinkAloud",
+            "otherEntityName": "thinkAloud",
+            "otherEntityRelationshipName": "developer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "defect",
+            "otherEntityName": "defect",
+            "otherEntityRelationshipName": "developer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "testCase",
+            "otherEntityName": "testCase",
+            "otherEntityRelationshipName": "developer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "interactiveLog",
+            "otherEntityName": "interactiveLog",
+            "otherEntityRelationshipName": "developer"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "study",
+            "otherEntityName": "study",
+            "otherEntityField": "title"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "license",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180531163708",
+    "entityTableName": "developer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

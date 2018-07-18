@@ -1,0 +1,30 @@
+
+{
+    "seodinApp": {
+        "interview" : {
+            "home": {
+                "title": "Interviews",
+                "createLabel": "Créer un nouveau Interview",
+                "createOrEditLabel": "Créer ou éditer un Interview",
+                "search": "Recherche pour Interview"
+            },
+            "created": "Un nouveau Interview a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Interview avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Interview avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Interview {{ id }} ?"
+            },
+            "detail": {
+                "title": "Interview"
+            },
+            "tag": "Tag",
+            "description": "Description",
+            "author": "Author",
+            "license": "License",
+            "audio": "Audio",
+            "video": "Video",
+            "note": "Note",
+            "developer": "Developer"
+        }
+    }
+}

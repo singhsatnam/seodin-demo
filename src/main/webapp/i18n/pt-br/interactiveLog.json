@@ -1,0 +1,31 @@
+
+{
+    "seodinApp": {
+        "interactiveLog" : {
+            "home": {
+                "title": "Interactive Logs",
+                "createLabel": "Criar novo Interactive Log",
+                "createOrEditLabel": "Criar ou editar Interactive Log",
+                "search": "Pesquisar por Interactive Log"
+            },
+            "created": "Um novo Interactive Log foi criado com o identificador {{ param }}",
+            "updated": "Um Interactive Log foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Interactive Log foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Interactive Log {{ id }}?"
+            },
+            "detail": {
+                "title": "Interactive Log"
+            },
+            "kind": "Kind",
+            "sourceHandle": "Source Handle",
+            "origin": "Origin",
+            "delta": "Delta",
+            "recorded": "Recorded",
+            "status": "Status",
+            "author": "Author",
+            "license": "License",
+            "developer": "Developer"
+        }
+    }
+}

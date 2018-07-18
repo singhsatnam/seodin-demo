@@ -1,0 +1,52 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myInterviewLabel" jhiTranslate="seodinApp.interview.home.createOrEditLabel">Create or edit a Interview</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!interview.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="interview.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interview.tag" for="field_tag">Tag</label>
+            <input type="text" class="form-control" name="tag" id="field_tag"
+                [(ngModel)]="interview.tag" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interview.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                [(ngModel)]="interview.description" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interview.author" for="field_author">Author</label>
+            <input type="text" class="form-control" name="author" id="field_author"
+                [(ngModel)]="interview.author" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interview.license" for="field_license">License</label>
+            <input type="text" class="form-control" name="license" id="field_license"
+                [(ngModel)]="interview.license" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interview.developer" for="field_developer">Developer</label>
+            <select class="form-control" id="field_developer" name="developer" [(ngModel)]="interview.developer" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="developerOption.id === interview.developer?.id ? interview.developer : developerOption" *ngFor="let developerOption of developers; trackBy: trackDeveloperById">{{developerOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

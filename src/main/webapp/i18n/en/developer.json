@@ -1,0 +1,31 @@
+
+{
+    "seodinApp": {
+        "developer" : {
+            "home": {
+                "title": "Developers",
+                "createLabel": "Create a new Developer",
+                "createOrEditLabel": "Create or edit a Developer",
+                "search": "Search for Developer"
+            },
+            "created": "A new Developer is created with identifier {{ param }}",
+            "updated": "A Developer is updated with identifier {{ param }}",
+            "deleted": "A Developer is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Developer {{ id }}?"
+            },
+            "detail": {
+                "title": "Developer"
+            },
+            "name": "Name",
+            "license": "License",
+            "interview": "Interview",
+            "diary": "Diary",
+            "thinkAloud": "Think Aloud",
+            "defect": "Defect",
+            "testCase": "Test Case",
+            "interactiveLog": "Interactive Log",
+            "study": "Study"
+        }
+    }
+}

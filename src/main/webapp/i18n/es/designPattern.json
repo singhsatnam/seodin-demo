@@ -1,0 +1,28 @@
+
+{
+    "seodinApp": {
+        "designPattern" : {
+            "home": {
+                "title": "Design Patterns",
+                "createLabel": "Crear nuevo Design Pattern",
+                "createOrEditLabel": "Crear o editar Design Pattern",
+                "search": "Search for Design Pattern"
+            },
+            "created": "Un nuevo Design Pattern ha sido creado con el identificador {{ param }}",
+            "updated": "Un Design Pattern ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Design Pattern ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Design Pattern {{ id }}?"
+            },
+            "detail": {
+                "title": "Design Pattern"
+            },
+            "tag": "Tag",
+            "author": "Author",
+            "xmlDescriptor": "Xml Descriptor",
+            "status": "Status",
+            "license": "License",
+            "sourceCode": "Source Code"
+        }
+    }
+}

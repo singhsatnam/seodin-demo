@@ -1,0 +1,72 @@
+
+<div *ngIf="defect">
+    <h2><span jhiTranslate="seodinApp.defect.detail.title">Defect</span> {{defect.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="seodinApp.defect.ticket">Ticket</span></dt>
+        <dd>
+            <span>{{defect.ticket}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.summary">Summary</span></dt>
+        <dd>
+            <span>{{defect.summary}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.description">Description</span></dt>
+        <dd>
+            <span>{{defect.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'seodinApp.ArtifactStatus.' + defect.status}}">{{defect.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.resolution">Resolution</span></dt>
+        <dd>
+            <span jhiTranslate="{{'seodinApp.Resolution.' + defect.resolution}}">{{defect.resolution}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.severity">Severity</span></dt>
+        <dd>
+            <span jhiTranslate="{{'seodinApp.Severity.' + defect.severity}}">{{defect.severity}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.priority">Priority</span></dt>
+        <dd>
+            <span jhiTranslate="{{'seodinApp.Priority.' + defect.priority}}">{{defect.priority}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.recorded">Recorded</span></dt>
+        <dd>
+            <span>{{defect.recorded | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.modified">Modified</span></dt>
+        <dd>
+            <span>{{defect.modified | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.author">Author</span></dt>
+        <dd>
+            <span>{{defect.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.license">License</span></dt>
+        <dd>
+            <span>{{defect.license}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.defect.developer">Developer</span></dt>
+        <dd>
+            <div *ngIf="defect.developer">
+                <a [routerLink]="['/developer', defect.developer?.id]">{{defect.developer?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'defect/'+ defect.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

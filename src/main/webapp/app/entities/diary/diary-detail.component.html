@@ -1,0 +1,56 @@
+
+<div *ngIf="diary">
+    <h2><span jhiTranslate="seodinApp.diary.detail.title">Diary</span> {{diary.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="seodinApp.diary.uri">Uri</span></dt>
+        <dd>
+            <span>{{diary.uri}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.diary.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'seodinApp.ArtifactStatus.' + diary.status}}">{{diary.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.diary.author">Author</span></dt>
+        <dd>
+            <span>{{diary.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.diary.license">License</span></dt>
+        <dd>
+            <span>{{diary.license}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.diary.softwareSystem">Software System</span></dt>
+        <dd>
+            <div *ngIf="diary.softwareSystem">
+                <a [routerLink]="['/software-system', diary.softwareSystem?.id]">{{diary.softwareSystem?.tag}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.diary.task">Task</span></dt>
+        <dd>
+            <div *ngIf="diary.task">
+                <a [routerLink]="['/task', diary.task?.id]">{{diary.task?.tag}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.diary.developer">Developer</span></dt>
+        <dd>
+            <div *ngIf="diary.developer">
+                <a [routerLink]="['/developer', diary.developer?.id]">{{diary.developer?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'diary/'+ diary.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

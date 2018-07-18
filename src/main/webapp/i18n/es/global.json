@@ -7,6 +7,22 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entidades",
+                "study": "Study",
+                "softwareSystem": "Software System",
+                "task": "Task",
+                "developer": "Developer",
+                "interview": "Interview",
+                "thinkAloud": "Think Aloud",
+                "diary": "Diary",
+                "audio": "Audio",
+                "video": "Video",
+                "note": "Note",
+                "defect": "Defect",
+                "testCase": "Test Case",
+                "interactiveLog": "Interactive Log",
+                "sourceCode": "Source Code",
+                "designPattern": "Design Pattern",
+                "script": "Script",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

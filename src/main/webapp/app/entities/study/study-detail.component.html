@@ -1,0 +1,38 @@
+
+<div *ngIf="study">
+    <h2><span jhiTranslate="seodinApp.study.detail.title">Study</span> {{study.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="seodinApp.study.title">Title</span></dt>
+        <dd>
+            <span>{{study.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.study.description">Description</span></dt>
+        <dd>
+            <span>{{study.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.study.author">Author</span></dt>
+        <dd>
+            <span>{{study.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.study.license">License</span></dt>
+        <dd>
+            <span>{{study.license}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'study/'+ study.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

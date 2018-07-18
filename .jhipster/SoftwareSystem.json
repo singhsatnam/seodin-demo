@@ -1,0 +1,55 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "sourceCode",
+            "otherEntityName": "sourceCode",
+            "otherEntityRelationshipName": "softwareSystem"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "diary",
+            "otherEntityName": "diary",
+            "otherEntityRelationshipName": "softwareSystem"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "testCase",
+            "otherEntityName": "testCase",
+            "otherEntityRelationshipName": "softwareSystem"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "thinkAloud",
+            "otherEntityName": "thinkAloud",
+            "otherEntityRelationshipName": "softwareSystem"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "study",
+            "otherEntityName": "study",
+            "otherEntityField": "title"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "author",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "license",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180531163706",
+    "entityTableName": "software_system",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

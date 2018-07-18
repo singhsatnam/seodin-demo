@@ -1,0 +1,50 @@
+
+<div *ngIf="thinkAloud">
+    <h2><span jhiTranslate="seodinApp.thinkAloud.detail.title">Think Aloud</span> {{thinkAloud.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="seodinApp.thinkAloud.tag">Tag</span></dt>
+        <dd>
+            <span>{{thinkAloud.tag}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.thinkAloud.description">Description</span></dt>
+        <dd>
+            <span>{{thinkAloud.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.thinkAloud.author">Author</span></dt>
+        <dd>
+            <span>{{thinkAloud.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.thinkAloud.license">License</span></dt>
+        <dd>
+            <span>{{thinkAloud.license}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.thinkAloud.softwareSystem">Software System</span></dt>
+        <dd>
+            <div *ngIf="thinkAloud.softwareSystem">
+                <a [routerLink]="['/software-system', thinkAloud.softwareSystem?.id]">{{thinkAloud.softwareSystem?.tag}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.thinkAloud.developer">Developer</span></dt>
+        <dd>
+            <div *ngIf="thinkAloud.developer">
+                <a [routerLink]="['/developer', thinkAloud.developer?.id]">{{thinkAloud.developer?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'think-aloud/'+ thinkAloud.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

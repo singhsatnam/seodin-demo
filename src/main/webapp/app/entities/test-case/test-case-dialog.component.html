@@ -1,0 +1,67 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTestCaseLabel" jhiTranslate="seodinApp.testCase.home.createOrEditLabel">Create or edit a Test Case</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!testCase.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="testCase.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.testCase.tag" for="field_tag">Tag</label>
+            <input type="text" class="form-control" name="tag" id="field_tag"
+                [(ngModel)]="testCase.tag" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.testCase.uri" for="field_uri">Uri</label>
+            <input type="text" class="form-control" name="uri" id="field_uri"
+                [(ngModel)]="testCase.uri" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.testCase.status" for="field_status">Status</label>
+            <select class="form-control" name="status" [(ngModel)]="testCase.status" id="field_status" >
+                <option value="PRIVATE">{{'seodinApp.ArtifactStatus.PRIVATE' | translate}}</option>
+                <option value="SUBMITED">{{'seodinApp.ArtifactStatus.SUBMITED' | translate}}</option>
+                <option value="PUBLISHED">{{'seodinApp.ArtifactStatus.PUBLISHED' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.testCase.author" for="field_author">Author</label>
+            <input type="text" class="form-control" name="author" id="field_author"
+                [(ngModel)]="testCase.author" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.testCase.license" for="field_license">License</label>
+            <input type="text" class="form-control" name="license" id="field_license"
+                [(ngModel)]="testCase.license" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.testCase.softwareSystem" for="field_softwareSystem">Software System</label>
+            <select class="form-control" id="field_softwareSystem" name="softwareSystem" [(ngModel)]="testCase.softwareSystem" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="softwareSystemOption.id === testCase.softwareSystem?.id ? testCase.softwareSystem : softwareSystemOption" *ngFor="let softwareSystemOption of softwaresystems; trackBy: trackSoftwareSystemById">{{softwareSystemOption.tag}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.testCase.developer" for="field_developer">Developer</label>
+            <select class="form-control" id="field_developer" name="developer" [(ngModel)]="testCase.developer" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="developerOption.id === testCase.developer?.id ? testCase.developer : developerOption" *ngFor="let developerOption of developers; trackBy: trackDeveloperById">{{developerOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

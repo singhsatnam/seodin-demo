@@ -1,0 +1,91 @@
+<div>
+    <h2>
+        <span jhiTranslate="seodinApp.testCase.home.title">Test Cases</span>
+        <button class="btn btn-primary float-right jh-create-entity create-test-case" [routerLink]="['/', { outlets: { popup: ['test-case-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="seodinApp.testCase.home.createLabel">
+            Create new Test Case
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'seodinApp.testCase.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="testCases">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="seodinApp.testCase.tag">Tag</span></th>
+            <th><span jhiTranslate="seodinApp.testCase.uri">Uri</span></th>
+            <th><span jhiTranslate="seodinApp.testCase.status">Status</span></th>
+            <th><span jhiTranslate="seodinApp.testCase.author">Author</span></th>
+            <th><span jhiTranslate="seodinApp.testCase.license">License</span></th>
+            <th><span jhiTranslate="seodinApp.testCase.softwareSystem">Software System</span></th>
+            <th><span jhiTranslate="seodinApp.testCase.developer">Developer</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let testCase of testCases ;trackBy: trackId">
+                <td><a [routerLink]="['../test-case', testCase.id ]">{{testCase.id}}</a></td>
+                <td>{{testCase.tag}}</td>
+                <td>{{testCase.uri}}</td>
+                <td jhiTranslate="{{'seodinApp.ArtifactStatus.' + testCase.status}}">{{testCase.status}}</td>
+                <td>{{testCase.author}}</td>
+                <td>{{testCase.license}}</td>
+                <td>
+                    <div *ngIf="testCase.softwareSystem">
+                        <a [routerLink]="['../software-system', testCase.softwareSystem?.id ]" >{{testCase.softwareSystem?.tag}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="testCase.developer">
+                        <a [routerLink]="['../developer', testCase.developer?.id ]" >{{testCase.developer?.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../test-case', testCase.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'test-case/'+ testCase.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'test-case/'+ testCase.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

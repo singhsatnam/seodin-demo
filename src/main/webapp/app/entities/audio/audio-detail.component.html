@@ -1,0 +1,60 @@
+
+<div *ngIf="audio">
+    <h2><span jhiTranslate="seodinApp.audio.detail.title">Audio</span> {{audio.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="seodinApp.audio.tag">Tag</span></dt>
+        <dd>
+            <span>{{audio.tag}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.audio.description">Description</span></dt>
+        <dd>
+            <span>{{audio.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.audio.duration">Duration</span></dt>
+        <dd>
+            <span>{{audio.duration}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.audio.uri">Uri</span></dt>
+        <dd>
+            <span>{{audio.uri}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.audio.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'seodinApp.ArtifactStatus.' + audio.status}}">{{audio.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.audio.recorded">Recorded</span></dt>
+        <dd>
+            <span>{{audio.recorded | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.audio.author">Author</span></dt>
+        <dd>
+            <span>{{audio.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.audio.license">License</span></dt>
+        <dd>
+            <span>{{audio.license}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.audio.interview">Interview</span></dt>
+        <dd>
+            <div *ngIf="audio.interview">
+                <a [routerLink]="['/interview', audio.interview?.id]">{{audio.interview?.tag}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'audio/'+ audio.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

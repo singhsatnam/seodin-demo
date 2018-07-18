@@ -1,0 +1,58 @@
+
+<div *ngIf="note">
+    <h2><span jhiTranslate="seodinApp.note.detail.title">Note</span> {{note.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="seodinApp.note.tag">Tag</span></dt>
+        <dd>
+            <span>{{note.tag}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.note.description">Description</span></dt>
+        <dd>
+            <span>{{note.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.note.uri">Uri</span></dt>
+        <dd>
+            <span>{{note.uri}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.note.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'seodinApp.ArtifactStatus.' + note.status}}">{{note.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.note.author">Author</span></dt>
+        <dd>
+            <span>{{note.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.note.license">License</span></dt>
+        <dd>
+            <span>{{note.license}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.note.interview">Interview</span></dt>
+        <dd>
+            <div *ngIf="note.interview">
+                <a [routerLink]="['/interview', note.interview?.id]">{{note.interview?.tag}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.note.thinkaloud">Thinkaloud</span></dt>
+        <dd>
+            <div *ngIf="note.thinkaloud">
+                <a [routerLink]="['/think-aloud', note.thinkaloud?.id]">{{note.thinkaloud?.tag}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'note/'+ note.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

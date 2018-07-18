@@ -1,0 +1,44 @@
+
+<div *ngIf="interview">
+    <h2><span jhiTranslate="seodinApp.interview.detail.title">Interview</span> {{interview.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="seodinApp.interview.tag">Tag</span></dt>
+        <dd>
+            <span>{{interview.tag}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interview.description">Description</span></dt>
+        <dd>
+            <span>{{interview.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interview.author">Author</span></dt>
+        <dd>
+            <span>{{interview.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interview.license">License</span></dt>
+        <dd>
+            <span>{{interview.license}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interview.developer">Developer</span></dt>
+        <dd>
+            <div *ngIf="interview.developer">
+                <a [routerLink]="['/developer', interview.developer?.id]">{{interview.developer?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'interview/'+ interview.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

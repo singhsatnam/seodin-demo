@@ -1,0 +1,60 @@
+
+<div *ngIf="interactiveLog">
+    <h2><span jhiTranslate="seodinApp.interactiveLog.detail.title">Interactive Log</span> {{interactiveLog.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="seodinApp.interactiveLog.kind">Kind</span></dt>
+        <dd>
+            <span jhiTranslate="{{'seodinApp.LogKind.' + interactiveLog.kind}}">{{interactiveLog.kind}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interactiveLog.sourceHandle">Source Handle</span></dt>
+        <dd>
+            <span>{{interactiveLog.sourceHandle}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interactiveLog.origin">Origin</span></dt>
+        <dd>
+            <span>{{interactiveLog.origin}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interactiveLog.delta">Delta</span></dt>
+        <dd>
+            <span>{{interactiveLog.delta}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interactiveLog.recorded">Recorded</span></dt>
+        <dd>
+            <span>{{interactiveLog.recorded | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interactiveLog.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'seodinApp.ArtifactStatus.' + interactiveLog.status}}">{{interactiveLog.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interactiveLog.author">Author</span></dt>
+        <dd>
+            <span>{{interactiveLog.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interactiveLog.license">License</span></dt>
+        <dd>
+            <span>{{interactiveLog.license}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.interactiveLog.developer">Developer</span></dt>
+        <dd>
+            <div *ngIf="interactiveLog.developer">
+                <a [routerLink]="['/developer', interactiveLog.developer?.id]">{{interactiveLog.developer?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'interactive-log/'+ interactiveLog.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

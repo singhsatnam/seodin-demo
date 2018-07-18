@@ -1,0 +1,32 @@
+
+{
+    "seodinApp": {
+        "video" : {
+            "home": {
+                "title": "Videos",
+                "createLabel": "创建新 Video",
+                "createOrEditLabel": "创建或编辑 Video",
+                "search": "查找 Video"
+            },
+            "created": "Video {{ param }} 创建成功",
+            "updated": "Video {{ param }} 更新成功",
+            "deleted": "Video {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Video {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Video"
+            },
+            "tag": "Tag",
+            "description": "Description",
+            "duration": "Duration",
+            "uri": "Uri",
+            "status": "Status",
+            "recorded": "Recorded",
+            "author": "Author",
+            "license": "License",
+            "interview": "Interview",
+            "thinkaloud": "Thinkaloud"
+        }
+    }
+}

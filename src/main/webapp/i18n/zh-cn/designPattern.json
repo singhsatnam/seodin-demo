@@ -1,0 +1,28 @@
+
+{
+    "seodinApp": {
+        "designPattern" : {
+            "home": {
+                "title": "Design Patterns",
+                "createLabel": "创建新 Design Pattern",
+                "createOrEditLabel": "创建或编辑 Design Pattern",
+                "search": "查找 Design Pattern"
+            },
+            "created": "Design Pattern {{ param }} 创建成功",
+            "updated": "Design Pattern {{ param }} 更新成功",
+            "deleted": "Design Pattern {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Design Pattern {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Design Pattern"
+            },
+            "tag": "Tag",
+            "author": "Author",
+            "xmlDescriptor": "Xml Descriptor",
+            "status": "Status",
+            "license": "License",
+            "sourceCode": "Source Code"
+        }
+    }
+}

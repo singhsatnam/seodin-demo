@@ -1,0 +1,10 @@
+{
+    "seodinApp": {
+        "ArtifactStatus" : {
+            "null": "",
+            "PRIVATE": "PRIVATE",
+            "SUBMITED": "SUBMITED",
+            "PUBLISHED": "PUBLISHED"
+        }
+    }
+}

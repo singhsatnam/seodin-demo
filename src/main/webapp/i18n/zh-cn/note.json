@@ -1,0 +1,30 @@
+
+{
+    "seodinApp": {
+        "note" : {
+            "home": {
+                "title": "Notes",
+                "createLabel": "创建新 Note",
+                "createOrEditLabel": "创建或编辑 Note",
+                "search": "查找 Note"
+            },
+            "created": "Note {{ param }} 创建成功",
+            "updated": "Note {{ param }} 更新成功",
+            "deleted": "Note {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Note {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Note"
+            },
+            "tag": "Tag",
+            "description": "Description",
+            "uri": "Uri",
+            "status": "Status",
+            "author": "Author",
+            "license": "License",
+            "interview": "Interview",
+            "thinkaloud": "Thinkaloud"
+        }
+    }
+}

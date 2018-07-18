@@ -1,0 +1,84 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myInteractiveLogLabel" jhiTranslate="seodinApp.interactiveLog.home.createOrEditLabel">Create or edit a Interactive Log</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!interactiveLog.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="interactiveLog.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interactiveLog.kind" for="field_kind">Kind</label>
+            <select class="form-control" name="kind" [(ngModel)]="interactiveLog.kind" id="field_kind" >
+                <option value="SELECTION">{{'seodinApp.LogKind.SELECTION' | translate}}</option>
+                <option value="COMMAND">{{'seodinApp.LogKind.COMMAND' | translate}}</option>
+                <option value="PREFERENCE">{{'seodinApp.LogKind.PREFERENCE' | translate}}</option>
+                <option value="EDIT">{{'seodinApp.LogKind.EDIT' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interactiveLog.sourceHandle" for="field_sourceHandle">Source Handle</label>
+            <input type="text" class="form-control" name="sourceHandle" id="field_sourceHandle"
+                [(ngModel)]="interactiveLog.sourceHandle" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interactiveLog.origin" for="field_origin">Origin</label>
+            <input type="text" class="form-control" name="origin" id="field_origin"
+                [(ngModel)]="interactiveLog.origin" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interactiveLog.delta" for="field_delta">Delta</label>
+            <input type="text" class="form-control" name="delta" id="field_delta"
+                [(ngModel)]="interactiveLog.delta" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interactiveLog.recorded" for="field_recorded">Recorded</label>
+            <div class="input-group">
+                <input id="field_recorded" type="text" class="form-control" name="recorded" ngbDatepicker  #recordedDp="ngbDatepicker" [(ngModel)]="interactiveLog.recorded"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="recordedDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interactiveLog.status" for="field_status">Status</label>
+            <select class="form-control" name="status" [(ngModel)]="interactiveLog.status" id="field_status" >
+                <option value="PRIVATE">{{'seodinApp.ArtifactStatus.PRIVATE' | translate}}</option>
+                <option value="SUBMITED">{{'seodinApp.ArtifactStatus.SUBMITED' | translate}}</option>
+                <option value="PUBLISHED">{{'seodinApp.ArtifactStatus.PUBLISHED' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interactiveLog.author" for="field_author">Author</label>
+            <input type="text" class="form-control" name="author" id="field_author"
+                [(ngModel)]="interactiveLog.author" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interactiveLog.license" for="field_license">License</label>
+            <input type="text" class="form-control" name="license" id="field_license"
+                [(ngModel)]="interactiveLog.license" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="seodinApp.interactiveLog.developer" for="field_developer">Developer</label>
+            <select class="form-control" id="field_developer" name="developer" [(ngModel)]="interactiveLog.developer" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="developerOption.id === interactiveLog.developer?.id ? interactiveLog.developer : developerOption" *ngFor="let developerOption of developers; trackBy: trackDeveloperById">{{developerOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

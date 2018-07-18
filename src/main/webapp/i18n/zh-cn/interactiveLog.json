@@ -1,0 +1,31 @@
+
+{
+    "seodinApp": {
+        "interactiveLog" : {
+            "home": {
+                "title": "Interactive Logs",
+                "createLabel": "创建新 Interactive Log",
+                "createOrEditLabel": "创建或编辑 Interactive Log",
+                "search": "查找 Interactive Log"
+            },
+            "created": "Interactive Log {{ param }} 创建成功",
+            "updated": "Interactive Log {{ param }} 更新成功",
+            "deleted": "Interactive Log {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Interactive Log {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Interactive Log"
+            },
+            "kind": "Kind",
+            "sourceHandle": "Source Handle",
+            "origin": "Origin",
+            "delta": "Delta",
+            "recorded": "Recorded",
+            "status": "Status",
+            "author": "Author",
+            "license": "License",
+            "developer": "Developer"
+        }
+    }
+}

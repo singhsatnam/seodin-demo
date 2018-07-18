@@ -1,0 +1,29 @@
+
+{
+    "seodinApp": {
+        "diary" : {
+            "home": {
+                "title": "Diaries",
+                "createLabel": "创建新 Diary",
+                "createOrEditLabel": "创建或编辑 Diary",
+                "search": "查找 Diary"
+            },
+            "created": "Diary {{ param }} 创建成功",
+            "updated": "Diary {{ param }} 更新成功",
+            "deleted": "Diary {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Diary {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Diary"
+            },
+            "uri": "Uri",
+            "status": "Status",
+            "author": "Author",
+            "license": "License",
+            "softwareSystem": "Software System",
+            "task": "Task",
+            "developer": "Developer"
+        }
+    }
+}

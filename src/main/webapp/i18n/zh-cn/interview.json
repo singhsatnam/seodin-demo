@@ -1,0 +1,30 @@
+
+{
+    "seodinApp": {
+        "interview" : {
+            "home": {
+                "title": "Interviews",
+                "createLabel": "创建新 Interview",
+                "createOrEditLabel": "创建或编辑 Interview",
+                "search": "查找 Interview"
+            },
+            "created": "Interview {{ param }} 创建成功",
+            "updated": "Interview {{ param }} 更新成功",
+            "deleted": "Interview {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Interview {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Interview"
+            },
+            "tag": "Tag",
+            "description": "Description",
+            "author": "Author",
+            "license": "License",
+            "audio": "Audio",
+            "video": "Video",
+            "note": "Note",
+            "developer": "Developer"
+        }
+    }
+}

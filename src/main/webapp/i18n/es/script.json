@@ -1,0 +1,29 @@
+
+{
+    "seodinApp": {
+        "script" : {
+            "home": {
+                "title": "Scripts",
+                "createLabel": "Crear nuevo Script",
+                "createOrEditLabel": "Crear o editar Script",
+                "search": "Search for Script"
+            },
+            "created": "Un nuevo Script ha sido creado con el identificador {{ param }}",
+            "updated": "Un Script ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Script ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Script {{ id }}?"
+            },
+            "detail": {
+                "title": "Script"
+            },
+            "tag": "Tag",
+            "description": "Description",
+            "sourceCode": "Source Code",
+            "status": "Status",
+            "author": "Author",
+            "license": "License",
+            "study": "Study"
+        }
+    }
+}

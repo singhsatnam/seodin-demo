@@ -1,0 +1,66 @@
+
+<div *ngIf="video">
+    <h2><span jhiTranslate="seodinApp.video.detail.title">Video</span> {{video.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="seodinApp.video.tag">Tag</span></dt>
+        <dd>
+            <span>{{video.tag}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.video.description">Description</span></dt>
+        <dd>
+            <span>{{video.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.video.duration">Duration</span></dt>
+        <dd>
+            <span>{{video.duration}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.video.uri">Uri</span></dt>
+        <dd>
+            <span>{{video.uri}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.video.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'seodinApp.ArtifactStatus.' + video.status}}">{{video.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.video.recorded">Recorded</span></dt>
+        <dd>
+            <span>{{video.recorded | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.video.author">Author</span></dt>
+        <dd>
+            <span>{{video.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.video.license">License</span></dt>
+        <dd>
+            <span>{{video.license}}</span>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.video.interview">Interview</span></dt>
+        <dd>
+            <div *ngIf="video.interview">
+                <a [routerLink]="['/interview', video.interview?.id]">{{video.interview?.tag}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="seodinApp.video.thinkaloud">Thinkaloud</span></dt>
+        <dd>
+            <div *ngIf="video.thinkaloud">
+                <a [routerLink]="['/think-aloud', video.thinkaloud?.id]">{{video.thinkaloud?.tag}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'video/'+ video.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

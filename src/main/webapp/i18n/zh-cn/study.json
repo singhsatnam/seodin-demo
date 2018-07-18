@@ -1,0 +1,30 @@
+
+{
+    "seodinApp": {
+        "study" : {
+            "home": {
+                "title": "Studies",
+                "createLabel": "创建新 Study",
+                "createOrEditLabel": "创建或编辑 Study",
+                "search": "查找 Study"
+            },
+            "created": "Study {{ param }} 创建成功",
+            "updated": "Study {{ param }} 更新成功",
+            "deleted": "Study {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Study {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Study"
+            },
+            "title": "Title",
+            "description": "Description",
+            "author": "Author",
+            "license": "License",
+            "developer": "Developer",
+            "softwareSystem": "Software System",
+            "script": "Script",
+            "task": "Task"
+        }
+    }
+}

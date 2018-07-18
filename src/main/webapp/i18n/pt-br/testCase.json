@@ -1,0 +1,29 @@
+
+{
+    "seodinApp": {
+        "testCase" : {
+            "home": {
+                "title": "Test Cases",
+                "createLabel": "Criar novo Test Case",
+                "createOrEditLabel": "Criar ou editar Test Case",
+                "search": "Pesquisar por Test Case"
+            },
+            "created": "Um novo Test Case foi criado com o identificador {{ param }}",
+            "updated": "Um Test Case foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Test Case foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Test Case {{ id }}?"
+            },
+            "detail": {
+                "title": "Test Case"
+            },
+            "tag": "Tag",
+            "uri": "Uri",
+            "status": "Status",
+            "author": "Author",
+            "license": "License",
+            "softwareSystem": "Software System",
+            "developer": "Developer"
+        }
+    }
+}

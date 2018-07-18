@@ -1,0 +1,30 @@
+
+{
+    "seodinApp": {
+        "softwareSystem" : {
+            "home": {
+                "title": "Software Systems",
+                "createLabel": "创建新 Software System",
+                "createOrEditLabel": "创建或编辑 Software System",
+                "search": "查找 Software System"
+            },
+            "created": "Software System {{ param }} 创建成功",
+            "updated": "Software System {{ param }} 更新成功",
+            "deleted": "Software System {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Software System {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Software System"
+            },
+            "tag": "Tag",
+            "author": "Author",
+            "license": "License",
+            "sourceCode": "Source Code",
+            "diary": "Diary",
+            "testCase": "Test Case",
+            "thinkAloud": "Think Aloud",
+            "study": "Study"
+        }
+    }
+}

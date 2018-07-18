@@ -1,0 +1,30 @@
+
+{
+    "seodinApp": {
+        "note" : {
+            "home": {
+                "title": "Notes",
+                "createLabel": "Criar novo Note",
+                "createOrEditLabel": "Criar ou editar Note",
+                "search": "Pesquisar por Note"
+            },
+            "created": "Um novo Note foi criado com o identificador {{ param }}",
+            "updated": "Um Note foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Note foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Note {{ id }}?"
+            },
+            "detail": {
+                "title": "Note"
+            },
+            "tag": "Tag",
+            "description": "Description",
+            "uri": "Uri",
+            "status": "Status",
+            "author": "Author",
+            "license": "License",
+            "interview": "Interview",
+            "thinkaloud": "Thinkaloud"
+        }
+    }
+}

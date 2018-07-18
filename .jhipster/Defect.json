@@ -1,0 +1,68 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "developer",
+            "otherEntityName": "developer",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ticket",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "summary",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "ArtifactStatus",
+            "fieldValues": "PRIVATE,SUBMITED,PUBLISHED"
+        },
+        {
+            "fieldName": "resolution",
+            "fieldType": "Resolution",
+            "fieldValues": "NONE,FIXED,WONTFIX,DUPLICATE,INVALID"
+        },
+        {
+            "fieldName": "severity",
+            "fieldType": "Severity",
+            "fieldValues": "NONE"
+        },
+        {
+            "fieldName": "priority",
+            "fieldType": "Priority",
+            "fieldValues": "MINOR,MAJOR,CRITICAL,TRIVIAL,BLOCKER"
+        },
+        {
+            "fieldName": "recorded",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "modified",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "author",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "license",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180531163715",
+    "entityTableName": "defect",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}
